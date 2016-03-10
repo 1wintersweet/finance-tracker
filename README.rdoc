@@ -13,3 +13,15 @@ Steps to create new Rails project and Github repo:
           git remote add origin git@github.com:1wintersweet/finance-tracker.git
           
           Remote repo is set.
+4. gemfile
+      group :development, :test do
+        gem 'sqlite3'
+      # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+        gem 'byebug'
+      end
+      Add:
+      group :production do
+        gem 'pg'
+        gem 'rails_12factor'
+      end
+          
