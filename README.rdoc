@@ -24,4 +24,15 @@ Steps to create new Rails project and Github repo:
         gem 'pg'
         gem 'rails_12factor'
       end
+      
+5. heroku deployment
+
+
+
+6. add gem devise to gemfile to do the authentication and quick creation of user and its controller etc. 
+    rails generate devise:install
+   rails generate devise User
+
+7. add bootstrap gem
+    rails generate bootstrap:install static
           
