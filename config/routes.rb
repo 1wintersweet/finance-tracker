@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "user/registrations"}
   # reference of how resources routers working: http://guides.rubyonrails.org/routing.html
   resources :user_stocks, except: [:show, :edit, :update] 
   # The priority is based upon order of creation: first created -> highest priority.
