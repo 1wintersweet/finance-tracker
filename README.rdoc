@@ -45,3 +45,18 @@ Steps to create new Rails project and Github repo:
     create table 
     rake db:migrate
           
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+DB related commands in rails console:
+
+manually establish many to many associations (frienships)
+
+user2.friends << user1 (get user1 and user2 first from Model.first and Model.last)

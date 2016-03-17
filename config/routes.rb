@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   
-  devise_for :users, :controllers => {:registrations => "user/registrations"}
+  # look at the user controller first
+  devise_for :users, :controllers => {:registrations => "user/registrations" }
   # reference of how resources routers working: http://guides.rubyonrails.org/routing.html
   resources :user_stocks, except: [:show, :edit, :update] 
+  #add the following two resources to support view friendship's page link paths
+  resources :users, only: [:show]
+  resources :friendships
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
@@ -10,6 +14,11 @@ Rails.application.routes.draw do
   get 'my_portfolio', to: "users#my_portfolio"
   get 'search_stocks', to: "stocks#search"
   get 'my_friends', to: 'users#my_friends'
+  
+  # add routes for the views for search and add friends in the routes.rb file
+  
+  get 'search_friends', to: 'users#search'
+  post 'add_friend', to: 'users#add_friend'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
