@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   end
   
   def search
-# byebug
     @users = User.search(params[:search_param])
     if @users 
       @users = current_user.except_current_user(@users)
@@ -30,4 +29,10 @@ class UsersController < ApplicationController
       redirect_to my_friends_path, flash[:error] = "There was an error with adding user as friend."
     end
   end
+  
+  def show
+    @user = User.find(params[:id])
+    @user_stocks = @user.stocks
+  end
+  
 end
