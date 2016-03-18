@@ -39,7 +39,7 @@ Steps to create new Rails project and Github repo:
     
     
 8. With db changes, after deploying to heroku, run this:
-    heroku run rake db.migrate
+    heroku run rake db:migrate
     
     
     create table 
